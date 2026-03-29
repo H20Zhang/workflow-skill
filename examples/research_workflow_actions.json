@@ -1,0 +1,35 @@
+[
+  {
+    "set": {
+      "notes": "Captured request constraints and acceptance criteria."
+    }
+  },
+  {
+    "advance": {
+      "to_state": "plan"
+    }
+  },
+  {
+    "set": {
+      "plan_ready": true
+    }
+  },
+  {
+    "advance": {
+      "to_state": "execute"
+    }
+  },
+  {
+    "set": {
+      "result": "Validated package artifact and end-to-end trace."
+    }
+  },
+  {
+    "mark_goal_complete": true
+  },
+  {
+    "advance": {
+      "to_state": "done"
+    }
+  }
+]
