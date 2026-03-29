@@ -1,0 +1,16 @@
+.venv/
+.venv-smoke/
+.omx/
+.coverage
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.egg-info/
+*.py[cod]
+build/
+dist/
+dist_sdist/
+dist_smoke/
+.idea/
+.DS_Store
