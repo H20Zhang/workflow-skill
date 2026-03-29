@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "workflow-skill"
+version = "0.2.0"
+description = "Typed Python FSM enforcement for agent workflows defined in constrained natural language."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+  { name = "Project Contributors" }
+]
+keywords = ["fsm", "agent", "workflow", "state-machine", "deterministic", "orchestration"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/H20Zhang/workflow-skill"
+Repository = "https://github.com/H20Zhang/workflow-skill"
+Issues = "https://github.com/H20Zhang/workflow-skill/issues"
+Changelog = "https://github.com/H20Zhang/workflow-skill/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "mypy>=1.10",
+  "ruff>=0.6",
+  "twine>=5.1",
+]
+
+[project.scripts]
+fsm-agent = "fsm_agent.__main__:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["fsm_agent*"]
+
+[tool.setuptools.package-data]
+fsm_agent = ["py.typed"]
+
+[tool.ruff]
+line-length = 120
+exclude = ["build", "dist", ".venv-smoke", ".venv"]
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src", "tests"]
+strict = true
+warn_unused_configs = true
+show_error_codes = true
+pretty = true
+
+[tool.coverage.run]
+branch = true
+source = ["fsm_agent"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
