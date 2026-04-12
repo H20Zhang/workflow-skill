@@ -38,7 +38,7 @@ Changelog = "https://github.com/H20Zhang/workflow-skill/blob/main/CHANGELOG.md"
 dev = [
   "build>=1.2",
   "mypy>=1.10",
-  "ruff>=0.6",
+  "ruff>=0.15.10",
   "twine>=5.1",
 ]
 
